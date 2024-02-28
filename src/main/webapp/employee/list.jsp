@@ -20,7 +20,7 @@
             </button>
 
             <form class="d-flex" method="get" action="list-employee">
-                <input class="form-control me-2" name="search" required type="text" placeholder="Search" aria-label="Search" value="<%= request.getAttribute("search")!= null ? request.getAttribute("search"): "" %>">
+                <input class="form-control me-2" name="search" required type="text" placeholder="Search by Name or Id" aria-label="Search" value="<%= request.getAttribute("search")!= null ? request.getAttribute("search"): "" %>">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

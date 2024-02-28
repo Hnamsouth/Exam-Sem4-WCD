@@ -9,7 +9,7 @@ import java.util.Date;
 public class Employee {
 
     @Id
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100,unique = true)
     private String id;
 
     @Column(nullable = false,length = 64)

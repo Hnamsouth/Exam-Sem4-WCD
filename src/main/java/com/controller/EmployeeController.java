@@ -45,9 +45,24 @@ public class EmployeeController extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        super.doPost(req, resp);
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id = req.getParameter("id");
+        if(!id.isEmpty()){
+            try(Session session = sessionFactory.openSession()){
+                session.beginTransaction();
+                Employee e = session.get(Employee.class,id);
+                if(e!=null){
+                    session.delete(e);
+                    session.getTransaction().commit();
+                }else {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Not Found");
+                }
+                resp.sendRedirect("list-employee");
+            }
+        }else{
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Not Found");
+        }
     }
 }

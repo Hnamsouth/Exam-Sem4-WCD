@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Exam-Sem4-WCD-1.0-SNAPSHOT.war">
+    <root id="archive" name="WCD-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Exam-Sem4-WCD:war exploded" />
     </root>
   </artifact>
